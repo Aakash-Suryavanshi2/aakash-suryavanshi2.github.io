@@ -62,7 +62,7 @@ body {
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Aakash Suryavanshi</a>
+
 					</header>
 
 				<!-- Nav -->
@@ -160,6 +160,20 @@ body {
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+  window.addEventListener('load', () => {
+    // If page opened with a hash (e.g., #section), do nothing
+    if (location.hash) return;
+
+    // Find the header with your title
+    const header = document.querySelector('header.major');
+    if (!header) return;
+
+    // Get position of the header and scroll to it
+    const y = header.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: y, left: 0, behavior: 'auto' }); // change to 'smooth' for animation
+  });
+</script>
 
 	</body>
 </html>

@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Aakash Suryavanshi Portfolio</title>
+
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -64,17 +64,13 @@
 			<div id="wrapper" class="fade-in">
 
 				<!-- Intro -->
-					<div id="intro">
-						<h1>Aakash Suryavanshi Portfolio</h1>
-						<p>Aspiring Data Analyst skilled in SQL, Tableu, and Excel.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+				
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Aakash Suryavanshi</a>
+						
+						#header { height: 0; padding: 0; margin: 0; }
+
 					</header>
 
 				<!-- Nav -->
@@ -175,6 +171,22 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+  window.addEventListener('load', () => {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (location.hash) return;
+
+    const nav = document.getElementById('nav');
+    if (!nav) return;
+
+    // wait a tick so fonts/layout settle
+    requestAnimationFrame(() => {
+      const offset = 0; // set to 10–20 if you want it a bit lower
+      const y = nav.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, left: 0, behavior: 'auto' }); // change to 'smooth' if you want animation
+    });
+  });
+</script>
 
 	</body>
 </html>
